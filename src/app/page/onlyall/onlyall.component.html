@@ -1,0 +1,36 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-6">
+
+        <h5 class="card-title mt-5 ">{{pokemon.id}}º  {{pokemon.name}}</h5>
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{image}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{imageback}}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <span class="badge rounded-pill bg-danger mx-3">Tipo: {{pokemonType}}</span>
+        <span class="badge rounded-pill bg-danger mx-3">{{weight}} g</span>
+        <span class="badge rounded-pill bg-danger mx-3">{{height}} cm</span>
+          
+    </div>
+</div>
+
+  
+
+  
+      <button [routerLink]="['/home']" class="btn btn-primary" type="button">Ir atrás...</button>
+  

@@ -1,18 +1,24 @@
 <table class="table table-hover table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Imagen</th>
-      <th scope="col">Peso</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-light" *ngFor="let pok of pokemon">
-      <td>{{pok.order}}</td>
-      <th scope="row">{{pok.name}}</th>
-      <td><img src="{{pok.image}}"></td>
-      <td>{{pok.weight}}</td>
-    </tr>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Imagen</th>
+        <th scope="col"></th>
+        <th scope="col">Peso</th>
+        <th scope="col">Altura</th>
+        <th scope="col">Tipos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-light" *ngFor="let pok of pokemon">
+        <td>{{pok.id}}</td>
+        <th scope="row"><a [routerLink]="['/onlyall', pok.id]">{{pok.name}}</a></th>
+        <td><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.imageback}}"></a></td>
+        <td><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.image}}"></a></td>
+        <td>{{pok.weight}} g</td>
+        <td>{{pok.height}} cm</td>
+        <td>{{pok.types}}</td>
+      </tr>
+    </tbody>
+  </table>

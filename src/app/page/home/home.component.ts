@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodospokemonsService } from '../../service/todospokemons.service';
-import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-home',
@@ -9,13 +9,10 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  pokemon: string [] = [];
-  pokemons = [];
-  image:string;
+   pokemon: string [] = [];
+   image:string;
 
-  constructor( private servicioPokemon: TodospokemonsService) { 
-    
-  }
+  constructor( private servicioPokemon: TodospokemonsService) { }
 
   ngOnInit(): void {
     this.getTodos();
@@ -29,17 +26,19 @@ export class HomeComponent implements OnInit {
 
       this.servicioPokemon.getPokemon(i).subscribe( (resp:any) => {  
 
-        pokemonData = {  
-          position: resp.id,
-          image: resp.sprites.front_default,  
-          name: resp.name,
-          weight: resp.weight,
-          order: resp.order,
-        };
-        this.pokemon.push(pokemonData);  
-         
+         pokemonData = {  
+           position: resp.id,
+           image: resp.sprites.front_default,  
+           imageback: resp.sprites.back_default,  
+           name: resp.name,
+           weight: resp.weight,
+           id: resp.id,
+           height: resp.height,
+           types: resp.types[0].type.name,    //Si cogemos el 1º elemento, si cogemos el 2 sería [1]
+         };
+         this.pokemon.push(pokemonData);  
       },
-    // },
+      
     error => {
       console.log(error.error);
       
