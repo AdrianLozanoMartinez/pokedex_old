@@ -1,3 +1,23 @@
 img{
     width: 300px !important;
 }
+
+
+.hunter{
+    animation-name: hunter;               
+    animation-duration: 3s;                 
+    animation-delay: 1s;                    
+    animation-iteration-count: 10;           
+    animation-direction:alternate;           
+    animation-timing-function: ease;      
+    animation-fill-mode: both;              
+  }
+  
+  @keyframes hunter{                        
+    from{                                  
+            width: 100px;
+        }
+    to{                                     
+            width: 400px;
+        }
+  }

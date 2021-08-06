@@ -13,8 +13,6 @@ import { ErrorComponent } from './component/error/error.component';
 import { FootComponent } from './component/foot/foot.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { SearchComponent } from './component/search/search.component';
-import { OnlyComponent } from './page/only/only.component';
-import { Only2Component } from './page/only2/only2.component';
 import { OnlyallComponent } from './page/onlyall/onlyall.component';
 
 
@@ -26,8 +24,6 @@ import { OnlyallComponent } from './page/onlyall/onlyall.component';
     FootComponent,
     NavbarComponent,
     SearchComponent,
-    OnlyComponent,
-    Only2Component,
     OnlyallComponent
   ],
   imports: [

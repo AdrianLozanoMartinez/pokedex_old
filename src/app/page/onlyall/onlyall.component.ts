@@ -15,6 +15,8 @@ export class OnlyallComponent implements OnInit {
   imageback = '';  
   height = '';
   weight = '';
+  errorN: string;  
+
 
   constructor( private pokemonService: TodospokemonsService, activatedRouter: ActivatedRoute ) { 
       activatedRouter.params.subscribe(  
@@ -40,7 +42,7 @@ export class OnlyallComponent implements OnInit {
       },
       err => {  
         console.log(err);
-        
+        this.errorN = err.error
       }
     );
   }

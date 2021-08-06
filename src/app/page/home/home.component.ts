@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
    pokemon: string [] = [];
    image:string;
+   errorN: string;
 
   constructor( private servicioPokemon: TodospokemonsService) { }
 
@@ -41,7 +42,7 @@ export class HomeComponent implements OnInit {
       
     error => {
       console.log(error.error);
-      
+      this.errorN = error.error
       //Sacar variable para usar los errores, pero después cuando funcione todo
     }
     
