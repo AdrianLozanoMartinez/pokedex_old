@@ -39,6 +39,7 @@ export class OnlyallComponent implements OnInit {
         this.height = this.pokemon.height;
         this.weight = this.pokemon.weight;
 
+         //CAMBIAR NOMBRE A MOSTRAR
         if ( this.pokemon.types[0].type.name === 'grass' ) {
             this.pokemonType = [' Planta'];
         }else if ( this.pokemon.types[0].type.name === 'bug' ) {

@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
          };
           this.pokemon.push(pokemonData);
 
-                   
+        //CAMBIAR NOMBRE A MOSTRAR
          if ( resp.types[0].type.name === 'grass' ) {
           pokemonData.types0 = [' Planta'];
          }else if ( resp.types[0].type.name === 'bug' ) {

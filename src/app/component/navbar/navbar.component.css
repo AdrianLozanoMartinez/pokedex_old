@@ -3,3 +3,18 @@
     top: 0px;
     position: fixed;
 }
+
+p{
+    animation-name: desaparecer;                
+    animation-duration: 5s;                
+    animation-fill-mode: forwards;      
+  }
+  
+  @keyframes desaparecer{                       
+    from{                                   
+        width: 8.8%;
+    }
+    to{                                     
+        visibility: hidden;   /*PAra que desaparezca en un tiempo marcado arriba (5seg)*/
+    }
+  }

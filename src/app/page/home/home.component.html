@@ -10,7 +10,6 @@
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Imagen</th>
-            <th scope="col"></th>
             <th scope="col">Peso</th>
             <th scope="col">Altura</th>
             <th scope="col">Tipos</th>
@@ -20,8 +19,7 @@
           <tr class="table-light" *ngFor="let pok of pokemon">
             <td>{{pok.id}}</td>
             <th scope="row"><a [routerLink]="['/onlyall', pok.id]">{{pok.name}}</a></th>
-            <td><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.imageback}}"></a></td>
-            <td><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.image}}"></a></td>
+            <td><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.imageback}}"><img src="{{pok.image}}"></a></td>
             <td>{{pok.weight}} g</td>
             <td>{{pok.height}} cm</td>
             <td>{{pok.types0}}</td>
