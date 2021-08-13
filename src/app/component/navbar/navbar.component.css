@@ -15,6 +15,6 @@ p{
         width: 8.8%;
     }
     to{                                     
-        visibility: hidden;   /*PAra que desaparezca en un tiempo marcado arriba (5seg)*/
+        visibility: hidden;   /*Para que desaparezca en un tiempo marcado arriba (5seg)*/
     }
   }

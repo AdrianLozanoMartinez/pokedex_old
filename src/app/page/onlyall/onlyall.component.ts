@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TodospokemonsService } from '../../service/todospokemons.service';
-import { ActivatedRoute } from '@angular/router';
+
+import { ParamMap, ActivatedRoute } from '@angular/router';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-onlyall',
@@ -17,7 +19,9 @@ export class OnlyallComponent implements OnInit {
   weight = '';
   errorN: string;  
 
-  constructor( private pokemonService: TodospokemonsService, activatedRouter: ActivatedRoute ) { 
+  constructor( private pokemonService: TodospokemonsService,
+               activatedRouter: ActivatedRoute,
+               private route: ActivatedRoute ) { 
       activatedRouter.params.subscribe(  
         params => {
         this.getPokemon1(params['id']); 
@@ -26,6 +30,7 @@ export class OnlyallComponent implements OnInit {
   }  
 
   ngOnInit(): void {
+    this.getCharactersByQuery();
   }
 
   getPokemon1(id){
@@ -83,7 +88,17 @@ export class OnlyallComponent implements OnInit {
     );
   }
 
-
-
+//Buscar
+  private getCharactersByQuery():void{  
+  
+    this.route.queryParams.pipe(
+      take(1) ).subscribe( (RecibeParams: ParamMap) => {  //take(1) -> no es necesario en este en otro si
+        console.log('Params -> ', RecibeParams );
+        
+        this.pokemon = RecibeParams['params'];  //Cogemos el valor introducimos en la búsqueda
+        // this.getDataFromService();  
+      })
+  
+  }
 
 }

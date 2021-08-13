@@ -7,34 +7,14 @@
             </a>
           </li>
         </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-sm-2" type="text" placeholder="Busca el pokémon" [(ngModel)]="nombreDelPokemon" name="buscador">
-          <button class="btn btn-secondary m-2 my-sm-0 text-dark" type="submit" (click)="search(local.value)" #local>Buscar</button>
-        </form> -->
-
-        <!-- <form class="d-flex">
-          <input class="form-control me-sm-2" type="text" placeholder="Busca el pokémon" name="buscador">
-          <button class="btn btn-secondary m-2 my-sm-0 text-dark" type="submit">Buscar</button>
-        </form> -->
-
-        <!-- <input #local 
-                autofocus 
-                type="text"
-                class="form-control-lg"
-                placeholder="Busca el pokemon"
-                (keyup)="onSearch(local.value)"> -->
-
                 
       <p *ngIf="error2" class="m-2">Error: {{error2}}</p>
 
       <img src="{{urlImage}}"> 
 
       <input type="text" [(ngModel)]="nombreDelPokemon" placeholder="Busca el pokemon">   
-      <button (click)="search()" class="btn btn-dark">Buscar</button>   
+      <button (click)="search(local.value)" class="btn btn-dark" #local>Buscar</button>   
 
-      
-
-      
       </div>
 
   </nav>
