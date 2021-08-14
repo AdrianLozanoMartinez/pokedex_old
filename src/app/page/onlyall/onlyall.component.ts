@@ -30,7 +30,7 @@ export class OnlyallComponent implements OnInit {
   }  
 
   ngOnInit(): void {
-    this.getCharactersByQuery();
+    this.getsearch();
   }
 
   getPokemon1(id){
@@ -38,8 +38,10 @@ export class OnlyallComponent implements OnInit {
       res => {  
         // console.log(res);
         this.pokemon = res;  //para usar pokemon.id...
-        this.image = this.pokemon.sprites.front_default;  
-        this.imageback = this.pokemon.sprites.back_default;  
+        // this.image = this.pokemon.sprites.front_default;     //Imagen pixelada
+        // this.imageback = this.pokemon.sprites.back_default;   //Imagen pixelada
+        this.image = this.pokemon.sprites.other.dream_world.front_default;   //Mejor imagen
+        // this.imageback = this.pokemon.sprites.back_default; 
         this.pokemonType = this.pokemon.types[0].type.name;  //Si cogemos el 1º elemento, si cogemos el 2 sería [1]
         this.height = this.pokemon.height;
         this.weight = this.pokemon.weight;
@@ -79,6 +81,8 @@ export class OnlyallComponent implements OnInit {
           this.pokemonType = [' Oscuro'];
         }else if ( this.pokemon.types[0].type.name === 'flying' ) {
           this.pokemonType = [' Volador'];
+        }else if ( this.pokemon.types[0].type.name === 'normal' ) {
+          this.pokemonType = [' Normal'];
         }
       },
       err => {  
@@ -89,7 +93,7 @@ export class OnlyallComponent implements OnInit {
   }
 
 //Buscar
-  private getCharactersByQuery():void{  
+  private getsearch():void{  
   
     this.route.queryParams.pipe(
       take(1) ).subscribe( (RecibeParams: ParamMap) => {  //take(1) -> no es necesario en este en otro si

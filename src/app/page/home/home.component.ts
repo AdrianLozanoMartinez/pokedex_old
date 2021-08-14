@@ -31,7 +31,8 @@ export class HomeComponent implements OnInit {
 
          pokemonData = {  
            position: resp.id,
-           image: resp.sprites.front_default,  
+           image: resp.sprites.front_default,  //Peor imagen   -> Mantengo esta para poner la imagen delantera y trasera
+          //  image: resp.sprites.other.dream_world.front_default,   //Mejor imagen
            imageback: resp.sprites.back_default,  
            name: resp.name,
            weight: resp.weight,
@@ -76,7 +77,10 @@ export class HomeComponent implements OnInit {
           pokemonData.types0 = [' Oscuro'];
         }else if ( resp.types[0].type.name === 'flying' ) {
           pokemonData.types0 = [' Volador'];
+        }else if ( resp.types[0].type.name === 'normal' ) {
+          pokemonData.types0 = [' Normal'];
         }
+
       },
       
     error => {
@@ -90,8 +94,6 @@ export class HomeComponent implements OnInit {
   }
 
 }
-
-
 
   
 }

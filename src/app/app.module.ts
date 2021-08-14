@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule } from '@angular/forms'; 
 
 import { AppComponent } from './app.component';

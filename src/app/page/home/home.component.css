@@ -12,7 +12,7 @@
     animation-fill-mode: both;              
   }
   
-  @keyframes hunter{                        
+@keyframes hunter{                        
     from{                                  
             width: 100px;
         }
@@ -21,3 +21,65 @@
         }
   }
 
+.centrar{
+    text-align: center;
+}
+
+/*CAMBIAR ALGUNA Tablet por ROW O COL PARA REDUCIR TABLA O USAR ROW Y COL SIEMPRE...IR PROBANDO*/
+
+@media screen and (min-width: 1025px){     /*Más de 1025px -> PC / TV*/
+    .table{
+        width: 600px;
+    }
+}
+
+
+@media screen and (width: 1024px){     /*Con 1024px -> Lapto*/
+    .table{
+        width: 600px;
+    }
+}
+
+
+@media screen and (width: 768px){     /*Con 768px -> .Tablet*/
+    .table{
+        width: 500px;
+    }
+}
+
+
+@media screen and (max-width: 612px){     /*Menos de 612px*/
+    .table{
+        width: 200px;
+    }
+}
+
+@media screen and (width: 540px){     /*Con 540px  -> Surface Duo*/
+    .table{
+        width: 10px;
+    }
+}
+
+
+@media screen and (width: 320px){     /*Con 320px  -> Mobile S*/
+    .table{
+        width: 600px;
+    }
+}
+
+@media screen and (width: 360px){     /*Con 360px ->  -> Mobile Moto G*/
+    .table{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 320px){     /*Menos de 320px ->  -> Mobile Galaxy Fold*/
+    .table{
+        width: 600px;
+    }
+}
+
+
+/* img{    /*Se usa cuando se pone la mejor imagen*/
+    /*width: 50px;
+} */

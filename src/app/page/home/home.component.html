@@ -1,28 +1,29 @@
 <div class="row justify-content-center mt-5">
   <div class="col-6">
 
-    <img class="hunter" *ngIf="errorN" src="../../../assets/image/hunter.png">
+    <img class="hunter mt-5" *ngIf="errorN" src="../../../assets/image/hunter.png">
     <h5 class="card-title mt-5" *ngIf="errorN">Ups! algo ha fallado: {{errorN}}</h5>
 
-    <table class="table table-hover table-dark" *ngIf="!errorN">
+    <table class="table table-hover table-dark justify-content-center" *ngIf="!errorN">
         <thead>
           <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Imagen</th>
-            <th scope="col">Peso</th>
-            <th scope="col">Altura</th>
-            <th scope="col">Tipos</th>
+            <!-- <th scope="col">Id</th> -->
+            <th scope="col" class="centrar">Nombre</th>
+            <th scope="col" class="centrar">Imagen</th>
+            <!-- <th scope="col">Peso</th>
+            <th scope="col">Altura</th>-->
+            <th scope="col" class="centrar">Tipos</th> 
           </tr>
         </thead>
         <tbody>
           <tr class="table-light" *ngFor="let pok of pokemon">
-            <td>{{pok.id}}</td>
-            <th scope="row"><a [routerLink]="['/onlyall', pok.id]">{{pok.name}}</a></th>
-            <td><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.imageback}}"><img src="{{pok.image}}"></a></td>
-            <td>{{pok.weight}} g</td>
-            <td>{{pok.height}} cm</td>
-            <td>{{pok.types0}}</td>
+            <!-- <td>{{pok.id}}</td> -->
+            <th scope="row" class="centrar"><a [routerLink]="['/onlyall', pok.id]">{{pok.name}}</a></th>
+            <td class="centrar"><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.imageback}}"><img src="{{pok.image}}"></a></td>
+            <!-- <td class="centrar"><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.image}}"></a></td> -->
+            <!-- <td>{{pok.weight}} g</td>
+            <td>{{pok.height}} cm</td> -->
+            <td class="centrar">{{pok.types0}}</td>
           </tr>
         </tbody>
       </table>
