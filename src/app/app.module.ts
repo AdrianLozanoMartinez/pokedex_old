@@ -13,7 +13,7 @@ import { ErrorComponent } from './component/error/error.component';
 import { FootComponent } from './component/foot/foot.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { OnlyallComponent } from './page/onlyall/onlyall.component';
-
+import { PaginatePipe } from './pipe/paginate.pipe';  
 
 @NgModule({
   declarations: [
@@ -22,13 +22,14 @@ import { OnlyallComponent } from './page/onlyall/onlyall.component';
     ErrorComponent,
     FootComponent,
     NavbarComponent,
-    OnlyallComponent
+    OnlyallComponent,
+    PaginatePipe
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot( ROUTES, { useHash: true } ),
     HttpClientModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

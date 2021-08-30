@@ -6,24 +6,7 @@
         <img class="hunter" *ngIf="errorN" src="../../../assets/image/hunter.png">
         <h5 class="card-title mt-5" *ngIf="errorN">Ups! algo ha fallado: {{errorN}}</h5>
 
-        <!-- <div id="carouselExampleControls mt-5" *ngIf="!errorN" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active"> -->
                 <img src="{{image}}" class="d-block w-100 mt-5" alt="...">
-              <!-- </div> -->
-              <!-- <div class="carousel-item">
-                <img src="{{imageback}}" class="d-block w-100" alt="...">
-              </div> -->
-            <!-- </div> -->
-            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button> -->
-          <!-- </div> -->
 
         <span class="badge rounded-pill bg-danger mx-3" *ngIf="!errorN">Tipo: {{pokemonType}}</span>
         <span class="badge rounded-pill bg-danger mx-3" *ngIf="!errorN">{{weight}} g</span>

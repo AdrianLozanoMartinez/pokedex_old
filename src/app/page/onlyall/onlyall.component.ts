@@ -20,8 +20,7 @@ export class OnlyallComponent implements OnInit {
   errorN: string;  
 
   constructor( private pokemonService: TodospokemonsService,
-               activatedRouter: ActivatedRoute,
-               private route: ActivatedRoute ) { 
+               private activatedRouter: ActivatedRoute ) { 
       activatedRouter.params.subscribe(  
         params => {
         this.getPokemon1(params['id']); 
@@ -41,7 +40,6 @@ export class OnlyallComponent implements OnInit {
         // this.image = this.pokemon.sprites.front_default;     //Imagen pixelada
         // this.imageback = this.pokemon.sprites.back_default;   //Imagen pixelada
         this.image = this.pokemon.sprites.other.dream_world.front_default;   //Mejor imagen
-        // this.imageback = this.pokemon.sprites.back_default; 
         this.pokemonType = this.pokemon.types[0].type.name;  //Si cogemos el 1º elemento, si cogemos el 2 sería [1]
         this.height = this.pokemon.height;
         this.weight = this.pokemon.weight;
@@ -95,12 +93,11 @@ export class OnlyallComponent implements OnInit {
 //Buscar
   private getsearch():void{  
   
-    this.route.queryParams.pipe(
+    this.activatedRouter.queryParams.pipe(
       take(1) ).subscribe( (RecibeParams: ParamMap) => {  //take(1) -> no es necesario en este en otro si
         console.log('Params -> ', RecibeParams );
         
         this.pokemon = RecibeParams['params'];  //Cogemos el valor introducimos en la búsqueda
-        // this.getDataFromService();  
       })
   
   }

@@ -13,11 +13,13 @@ export class HomeComponent implements OnInit {
    image:string;
    errorN: string;
 
+   page_size: number = 10
+   page_number: number = 1
+
   constructor( private servicioPokemon: TodospokemonsService ) { }
 
   ngOnInit(): void {
     this.getTodos();
-    
   }
 
   getTodos(){
@@ -95,5 +97,5 @@ export class HomeComponent implements OnInit {
 
 }
 
-  
+
 }
