@@ -11,20 +11,27 @@
             <!-- <th scope="col">Id</th> -->
             <th scope="col" class="centrar">Nombre</th>
             <th scope="col" class="centrar">Imagen</th>
-            <!-- <th scope="col">Peso</th>
-            <th scope="col">Altura</th>-->
+            <th scope="col">Peso</th>
+            <th scope="col">Altura</th>
             <th scope="col" class="centrar">Tipos</th> 
           </tr>
         </thead>
         <!-- <tbody> -->  <!--*Forma 1-->
         <tbody *ngIf="pokemon?.length != 0">  <!--*Forma 2-->
-          <tr class="table-light" *ngFor="let pok of pokemon | paginate:page_size:page_number">
+          <tr class="table-light" *ngFor="let pok of pokemon | paginate: { itemsPerPage: 10, currentPage: paginaCoge, totalItems: totalpokemons }">  <!-- Paginacion -->
             <!-- <td>{{pok.id}}</td> -->
-            <th scope="row" class="centrar"><a [routerLink]="['/onlyall', pok.id]">{{pok.name}}</a></th>
-            <td class="centrar"><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.imageback}}"><img src="{{pok.image}}"></a></td>
-            <!-- <td>{{pok.weight}} g</td>
-            <td>{{pok.height}} cm</td> -->
-            <td class="centrar">{{pok.types0}}</td>
+           <th scope="row" class="centrar"><a [routerLink]="['/onlyall', pok.id]">{{pok.name}}</a></th>
+           <!-- Sin Paginación -->
+           <!-- <td class="centrar"><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.imageback}}"><img src="{{pok.image}}"></a></td> -->
+           <!-- Con Paginación -->
+           <td class="centrar"><a [routerLink]="['/onlyall', pok.id]"><img src="{{pok.sprites.back_default}}"><img src="{{pok.sprites.front_default}}"></a></td>
+            <td>{{pok.weight}} g</td>
+            <td>{{pok.height}} cm</td>
+
+            <!-- Sin Paginación -->
+            <!-- <td class="centrar">{{pok.types0}}</td> -->
+            <!-- Con Paginación -->
+            <td class="centrar">{{pok.types[0].type.name}}</td>
           </tr>
         </tbody>
       </table>
@@ -33,3 +40,8 @@
 
     </div>
   </div>
+
+<!-- Paginacion -->
+  <pagination-controls (pageChange)="paginaCoge = $event; pokemon = []; getTodos()"></pagination-controls>
+
+  <br><br>

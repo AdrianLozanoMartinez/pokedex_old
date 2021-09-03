@@ -13,7 +13,9 @@ import { ErrorComponent } from './component/error/error.component';
 import { FootComponent } from './component/foot/foot.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { OnlyallComponent } from './page/onlyall/onlyall.component';
-import { PaginatePipe } from './pipe/paginate.pipe';  
+
+//Paginación
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,15 @@ import { PaginatePipe } from './pipe/paginate.pipe';
     ErrorComponent,
     FootComponent,
     NavbarComponent,
-    OnlyallComponent,
-    PaginatePipe
+    OnlyallComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot( ROUTES, { useHash: true } ),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    //Paginación
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

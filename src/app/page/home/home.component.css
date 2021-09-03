@@ -83,3 +83,8 @@
 /* img{    /*Se usa cuando se pone la mejor imagen*/
     /*width: 50px;
 } */
+
+
+pagination-controls {
+    text-align: center;
+}
