@@ -31,12 +31,25 @@
             <!-- Sin Paginación -->
             <!-- <td class="centrar">{{pok.types0}}</td> -->
             <!-- Con Paginación -->
-            <td class="centrar">{{pok.types[0].type.name}}</td>
+            <!-- <td class="centrar">{{pok.types[0].type.name}}</td> -->
+
+            <!-- Traduccion mal hecha -->
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'grass'">Hierva</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'bug'">Insecto</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'fire'">Fuego</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'water'">Agua</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'normal'">Normal</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'psychic'">Psíquico</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'ground'">Suelo</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'poison'">Veneno</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'fighting'">Luchador</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'electric'">Eléctrico</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'fairy'">Hada</td>
+            <td class="centrar" *ngIf="pok.types[0].type.name === 'rock'">Roca</td>
+          <td class="centrar" *ngIf="pok.types[0].type.name === 'ghost'">Fantasma</td>
           </tr>
         </tbody>
       </table>
-
-      
 
     </div>
   </div>

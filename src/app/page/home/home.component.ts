@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodospokemonsService } from '../../service/todospokemons.service';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
